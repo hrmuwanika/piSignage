@@ -17,7 +17,8 @@
 10. Google login and signup: email/username availability checks during OAuth signup flow
 11. PowerBI report page navigation and scroll support with zod validation
 12. PayPal API integration updates
-13. Labels management: refactored rename/delete with installation filter support
+13. Categories management: refactored rename/delete with installation filter support
+14. Introducing Location rights for collaborators
 14. PWA updates for player2
 15. New website routing and homepage restructuring
 16. Prev/next navigation implementation for New-UI
