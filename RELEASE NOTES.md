@@ -1,7 +1,7 @@
 # Release Notes for piSignage Player image 
 ***Important: Skip to original player for upto 3.x.x releases***
 
-#### 3.9.5 Server Release    
+#### 3.9.5/5.0.3 Server Release    
      
 1. SAML login improvements: Fixed issues with few of the providers    
    - identifier-based login for returning users  
