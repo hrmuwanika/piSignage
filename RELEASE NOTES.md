@@ -64,6 +64,14 @@
 
 ## Player2 (version 4.x.x onwards)  
 
+### 5.4.2   
+
+1. Disable pi-player for now and map "mpv" to vlc with no-gap support
+2. Upgrade pdf.js to 5.5.207(latest) and use that to show PDF slide show instead of evince player(which is based on X)
+3. In lower models of Pi, HDMI interface was not detected after video -> image transition - Fixed
+4. Screenshot support for GNOME-WAYLAND configuration of Debian/Ubuntu players
+5. Added 32 bit Trixie support for lower models of Pi as 64 bit was running into resource issues
+
 ### 5.4.0/5.4.1
 
 1. Bookworm OS upgrade to latest version for player images 5.1.2/5.2.0/5.3.2 and fixing broken updates
