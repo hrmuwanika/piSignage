@@ -64,7 +64,7 @@
 
 ## Player2 (version 4.x.x onwards)  
 
-### 5.4.2   
+### 5.4.2/5.4.3   
 
 1. Fixed - Issue of Wifi credentials with special characters not working in 5.4.1
 2. Disable pi-player for now and map "mpv" to vlc with no-gap support
