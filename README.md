@@ -46,12 +46,14 @@ There are 2 ways you can get the piSignage Player Software:
 
 ##### Trixie OS based 5.4.1 image (NEW)
 
+For all models above Pi 3B+  (Pi 3/4/5 and other variations):
+- [Version 5.4.3](https://pisignage.s3.us-east-1.amazonaws.com/pisignage-images/pisignage_5.4.3.img.zip) based on 
+  64bit Raspberry OS released on Dec 2025
+  | [Gdrive link](https://drive.google.com/file/d/10kGYxHO2NgbZeuK1EyHPxBo9YInY-2uW/view?usp=sharing)    
 
-For all models of Pi including Pi 3B, ~~Pi 02 W~~ (except Pi 0, Pi 0W, Pi 1, Pi 2):  
-> *Note: as of now image does not work on Pi 02W, we are working on the same*
-
-- [Version 5.4.1](https://pisignage.s3.us-east-1.amazonaws.com/pisignage-images/pisignage_5.4.1.img.zip) based on 64bit Raspberry OS released on Dec 2025
-  | [Gdrive link](https://drive.google.com/file/d/1VAuXFeRpv__8Z3nRUYlWOtcNEdz9r8Kg/view?usp=sharing)
+For lower models of Pi (Pi 02W, Pi 3)
+- [Version 5.4.3](https://pisignage.s3.us-east-1.amazonaws.com/pisignage-images/pisignage_5.4.3_32bit.img.zip) based on 32bit Raspberry OS released on Dec 2025
+  | [Gdrive link](https://drive.google.com/file/d/1m2wcdo-FLZklOi2A81OHL98qZ5x3lul2/view?usp=sharing)
 
 ##### Other images based on older Raspberry OS versions
 
