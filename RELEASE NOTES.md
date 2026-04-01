@@ -1,6 +1,35 @@
 # Release Notes for piSignage Player image 
 ***Important: Skip to original player for upto 3.x.x releases***
 
+#### 3.9.6/5.0.5 Server Release
+1. SAML IdP-initiated SSO: extract Issuer from SAMLResponse when RelayState is missing, add idpCert for newer passport-saml
+2. Delayed delete improvements: free up email and player cpuSerialNumber on soft-delete, hide deleted users from collaborator lists
+3. Preview app: in-browser preview of playlists based on new PWA
+4. Location-based access control for collaborators: assign specific locations to collaborators with view-only option
+5. Turkish language support (tr_TR locale)
+6. Lazy-load playlist thumbnails with infinite scroll for unassigned playlist items
+7. Defer payment scripts (Razorpay/Stripe/PayPal) to subscriptions page instead of loading globally
+8. Android/PWA Player2 updates: 
+   - settings page fixes
+   - missing webpage options
+   - PWA release
+   - settings button fix
+   - YouTube/video autoplay fixes 
+   - Welcome notice change
+   - New PDF.js package
+   - resolution watch removal
+   - Fixed - Android disconnect issue occuring every 3 minutes
+9. WebSocket connection stability fix (reverted aggressive timeout increase)
+10. Player2 installation procedure documentation updates
+11. Server2 specific
+    - Exclude player images from bundle to reduce size
+    - OpenAPI documentation: YAML specs for all major APIs (auth, assets, playlists, groups, players, locations, reports, settings, subscriptions, template designer)
+    - autoIndex enabled for self-hosted deployments based on systemd service detection 
+    - FFmpeg error fix in file processing
+    - Webpack config updates for hosted server build
+    - Ansible deployment improvements: SSL/Certbot playbook, git and acl package installation
+    - Fix workers crashing due to null keyValue in locations controller
+
 #### 3.9.5/5.0.3 Server Release    
      
 1. SAML login improvements: Fixed issues with few of the providers    
