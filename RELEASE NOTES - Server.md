@@ -13,6 +13,27 @@ For player-side notes, see:
 
 ---
 
+#### 3.9.7/5.0.7   Server Release
+1. Reseller account management: 
+    - server-enforced allocation of licenses, server credits, storage to child clients with adjustments against the reseller
+    - clients are now created with zero initial licenses/storage/credits
+    - Ability to hide subscription tab for the client
+    - Reseller access from child account can be removed if needed
+2. Collaborator deletion
+   - when a parent removes a pure collaborator (not another user) the underlying user record (and associated data) is deleted 
+3. Group/player listing fix
+   - collaborator listings no longer fall back to "all groups" when the filter array contains no group entries
+4. Playlist rename fix
+   - writing the renamed playlist JSON now targets the original filename so renames don't leave orphaned files
+5. Self-hosted Server 
+   - Redirect unauthenticated requests to the configured home page
+   - Beta UI integration for self-hosted instrallations
+6. 4K video support: 
+   - when `enable4kSupport` is on, transcoding is skipped for all formats (not just mp4/mkv); 
+   - `enable4kSupport` is now propagated from the parent installation to collaborator sessions
+7.  PWA 5.4.3 release: new offline fallback page, centered welcome screen layout, settings button fix
+8.  Preview 5.4.3: matching offline page,aspect ratio preserve
+   
 #### 3.9.6/5.0.5 Server Release
 1. SAML IdP-initiated SSO: extract Issuer from SAMLResponse when RelayState is missing, add idpCert for newer passport-saml
 2. Delayed delete improvements: free up email and player cpuSerialNumber on soft-delete, hide deleted users from collaborator lists
