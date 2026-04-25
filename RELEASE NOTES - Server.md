@@ -1,0 +1,161 @@
+# Release Notes for piSignage Server
+
+This document covers releases for both server lines:
+
+- **3.x.x** — legacy server
+- **5.x.x** — modern rewrite (server2)
+
+Most recent releases ship to both lines simultaneously and use a dual version notation (e.g. *"3.9.6/5.0.5 Server Release"*).
+
+For player-side notes, see:
+- [RELEASE NOTES - Player 5.x.x.md](<RELEASE NOTES - Player 5.x.x.md>) — Player2 (4.x.x and 5.x.x)
+- [RELEASE NOTES - Player 3.x.x.md](<RELEASE NOTES - Player 3.x.x.md>) — Original Player (3.x.x and earlier)
+
+---
+
+#### 3.9.6/5.0.5 Server Release
+1. SAML IdP-initiated SSO: extract Issuer from SAMLResponse when RelayState is missing, add idpCert for newer passport-saml
+2. Delayed delete improvements: free up email and player cpuSerialNumber on soft-delete, hide deleted users from collaborator lists
+3. Preview app: in-browser preview of playlists based on new PWA
+4. Location-based access control for collaborators: assign specific locations to collaborators with view-only option
+5. Turkish language support (tr_TR locale)
+6. Lazy-load playlist thumbnails with infinite scroll for unassigned playlist items
+7. Defer payment scripts (Razorpay/Stripe/PayPal) to subscriptions page instead of loading globally
+8. Android/PWA Player2 updates: 
+   - settings page fixes
+   - missing webpage options
+   - PWA release
+   - settings button fix
+   - YouTube/video autoplay fixes 
+   - Welcome notice change
+   - New PDF.js package
+   - resolution watch removal
+   - Fixed - Android disconnect issue occuring every 3 minutes
+9. WebSocket connection stability fix (reverted aggressive timeout increase)
+10. Player2 installation procedure documentation updates
+11. Server2 specific
+    - Exclude player images from bundle to reduce size
+    - OpenAPI documentation: YAML specs for all major APIs (auth, assets, playlists, groups, players, locations, reports, settings, subscriptions, template designer)
+    - autoIndex enabled for self-hosted deployments based on systemd service detection 
+    - FFmpeg error fix in file processing
+    - Webpack config updates for hosted server build
+    - Ansible deployment improvements: SSL/Certbot playbook, git and acl package installation
+    - Fix workers crashing due to null keyValue in locations controller
+
+#### 3.9.5/5.0.3 Server Release    
+     
+1. SAML login improvements: Fixed issues with few of the providers    
+   - identifier-based login for returning users  
+   - issuer-based org lookups  
+2. Video transcoding enhancements: H.264 level/bitrate checks, rounded FPS for Pi compatibility, improved FFmpeg parameters
+3. 4K video support: optional per-user setting to skip transcoding for 4K mp4/mkv files
+3. Login branding: custom logo, colors, and auth images per user on login/signup pages
+4. Plus-addressing email validation (RFC 5233) for availability checks during signup
+5. Soft-delete for user accounts with 7-day TTL before permanent removal
+6. Strict collaborator enforcement: restrict collaborators to same email domain 
+7. Self-remove as collaborator: users can remove themselves from accounts they collaborate on
+8. Credit notes support in invoices: fetch and display Zoho credit notes alongside invoices
+10. Google login and signup: email/username availability checks during OAuth signup flow
+11. PowerBI report page navigation and scroll support with zod validation
+12. PayPal API integration updates
+13. Categories management: refactored rename/delete with installation filter support
+14. Introducing Location rights for collaborators
+14. PWA updates for player2
+15. New website routing and homepage restructuring
+16. Prev/next navigation implementation for New-UI
+17. Player URL path normalization: fix double slashes in player URLs
+18. Logout handling fixes: cookie clearing and crash prevention
+19. 404 page added for unmatched routes
+
+#### 3.9.4 Server Release
+
+1. Add collaborator rights for collaborators, which can be used for adding/editing other collaborators. 
+2. Email change in profile settings requires OTP verification during next login. 
+3. Multiple rows of TV on/off support in the location tab. 
+4. Change playlist name when the playlist file name is changed. 
+5. Favicon change 
+6. Fix for getting the playlist emoji and description (getPlaylist)
+7. Changing the default group color for the new UI.
+
+#### 3.9.0-3.9.3 Server Releases
+1. Support for recent mongodb versions by replacing mongoose callback with promise 
+2. Migration to ES6 and later node version support
+3. Support for multiple region support and migration support for new server code implementation
+4. Japanese Language addition
+5. Ongoing feature additions/improvements and bug fixes
+
+#### 3.8.0   Server Release
+1. Fix for repeated downloads and deletes in group players when some of the players have additional groups or playlists
+
+#### 3.7.1   Server Release
+1. Avoid location verification and disable GMail support for white label customers
+2. Add validity field for asset download list
+
+#### 3.7.0   Server Release
+1. Added support for SAML based SSO signup and login
+2. Power BI reports support added - use PowerBI type asset link under add assets button
+3. Fixed issues of empty login error message and other minor issues
+
+#### 3.6.0   Server Release
+1. Features added needed for upcoming New-UI and Interactive features
+
+#### 3.5.0   Server Release
+1. Security features added - **Please make sure you are able to access the email ID registered with your account, 
+   otherwise write to support to update your email ID**
+
+#### 3.4.1   Server
+1. Added upload/download statistics 
+2. Added number of players under Groups tab, total duration of playlist under playlists screen
+3. Fixed issue with multiple playlist assignments under assets screen
+4. Feature to add duration and modify option for multiple assets under playlists screen
+5. Show players selected in Reports screen for reports
+6. Added new feature to manage locations for players (for e.g. TV OFF/ON based on location)
+7. UI improvements to show more info - player notes, creation date etc.
+
+#### 3.4.0   Server 
+1. Added Two Factor authentication with email OTP or Google Authenticator support
+2. Rememeber me option while login
+3. Ability to change email, username or password under profile settings page
+4. Help while renewing subscription - minimum needed for next month and value for next 1 year
+5. Ability to add invoice details during purchase
+6. Avoid playlist corruption 
+
+#### 3.3.1   Server 
+1. Fix server crashes when playlist is corrupted
+2. Package UI to speed up loading of server UI
+3. Create billing entry for player disable/enable
+4. Avoid playlist corruption while drag and drop 
+5. Convert RazorPay to INR from USD
+
+#### 3.3.0  Server Only
+1. Use mangodb aggregator for report generation instead of deprecated mapReduce
+
+#### 3.2.7   Server 
+1.Avoid unnecessary downloads to player on player poweron
+1. Including .htm extension for html files
+
+#### 3.2.2 server-only release
+1. Automatically adding duration and thumbnail for the YouTube links
+2. Log of user activity available for last 7 days - see under settings tab, show log activity
+3. Account getting locked after adding emergency playlist - fixed
+4. Auto invoice generation for online payment
+
+#### 3.2.1 server-only release
+1. Asset or playlist renaming - update Groups and Playlists as needed
+2. Asset or playlist deletion - update Groups and Playlists as needed
+3. Group deletion - allow only when there are no players attached, update otherGroups assocaited with players
+4. Group rename - update Player groups and otherGroups as needed
+5. Update playlists during get operation for deleted and validity expiration of assets
+6. Allow validity provisioning during upload of assets
+7. Added emergency playlist and emergency message feature to deploy to all players across installation under Groups
+8. Add validity to multiple assets at once
+9. invert display option in player2 orientation
+
+#### 3.2.0a server-only release
+1. Dual display support UI under Group settings for player2 4.7.0 release onwards
+2. Fixed issue of playlist search and categories bar missing
+3. Increased limit of schedulable playlists to 150 (from 100)
+
+---
+
+*Note: Older server changes that were published jointly with player releases (e.g. "3.2.6 Server + Player release", "3.2.0", etc.) are kept alongside the player notes in [RELEASE NOTES - Player 3.x.x.md](<RELEASE NOTES - Player 3.x.x.md>).*
