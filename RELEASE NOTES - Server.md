@@ -13,6 +13,17 @@ For player-side notes, see:
 
 ---
 
+#### 3.9.8/5.0.8   Server Release
+1. Player status change tracking
+    - New `statusChangeTime` field on each player records when its state last meaningfully changed (connect/disconnect, CEC TV on/off, playlist on/off)
+2. Beta UI (v2) for self-hosted and white-label
+    - Beta UI redirect now works on non-piSignage partner deployments
+    - Login/signup on host-mapped third-party domains correctly redirect to `/v2/` when the user has opted in
+    - Fix: anonymous visitors on a host-mapped domain were landing on the marketing homepage instead of the app
+3. v2ui frontend
+    - Next.js and React major-version upgrade
+    - Login/signup redirect fix, playlist-in-other-zones rendering fix, guard checks for missing settings
+
 #### 3.9.7/5.0.7   Server Release
 1. Reseller account management: 
     - server-enforced allocation of licenses, server credits, storage to child clients with adjustments against the reseller
